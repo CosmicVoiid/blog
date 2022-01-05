@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/CosmicVoiid/blog#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "mongoose": "^6.1.5"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.15"
   }
 }
