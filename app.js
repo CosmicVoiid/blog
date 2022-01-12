@@ -2,6 +2,9 @@ if (process.env.NODE_ENV !== "production") require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
+const bodyParser = require("body-parser");
+const jwt = require("jsonwebtoken");
+const indexRouter = require("./routes/index");
 
 //create server
 const app = express();
@@ -22,3 +25,9 @@ mongoose
 
 //middleware
 app.use(morgan("dev"));
+app.use(bodyParser.json());
+app.use("/", indexRouter);
+
+app.use((req, res) => {
+	res.status(404).send({ title: "404 Page Not Found" });
+});
